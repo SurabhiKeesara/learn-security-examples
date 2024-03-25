@@ -13,7 +13,14 @@ Threats
             - single factor authentication (ie - just a password)
             - insecure session config (used to make it easy for client to stay logged in)
     - Tampering
+        - Tampering with inputs can cause unexpected behavior
+        - Ex
+            - Not sanitizing inputs
+            - DB input attacks
+            - Not blocking malicious uploads
+            - Tampering with queries
     - Repudiation
     - Information Disclosure
+        - Logging sensitive information, not hiding information, personal information made publically available.
     - Denial of Service
     - Elevation of Privilege

@@ -2,6 +2,12 @@ const express = require("express")
 const session = require("express-session")
 
 const app = express();
+
+// to run
+// cd spoofing
+// npm install
+// node insecure.js
+
 app.use(express.urlencoded({ extended: false }))
 
 app.use(
@@ -27,6 +33,13 @@ app.get("/", (req, res) => {
   let name = "Guest"
 
   if (req.session.user) name = req.session.user
+  // if user already in session, extract and store username
+  // session (is a middleware, like CORS)
+  // session not set at start, then response sent
+
+  // sent to user on login?
+  // sends register to POST
+  // req session sent every request iuntil we say destroy
 
   res.send(`
   <h1>Welcome, ${name}</h1>
@@ -43,6 +56,7 @@ app.get("/", (req, res) => {
 app.post("/register", (req, res) => {
   // name = req.body.name.trim()
   // res.redirect("/")
+  // , sets name to username
   req.session.user = req.body.name.trim()
   res.send(`<p>Thank you</p> <a href="/">Back home</a>`)
 })

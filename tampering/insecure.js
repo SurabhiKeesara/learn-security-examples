@@ -33,6 +33,8 @@ app.get("/", (req, res) => {
 
   if (req.session.user) name = req.session.user
 
+  // name just input into HTML, not made secure or sanitized
+  // name could be code
   res.send(`
   <h1>Welcome, ${name}</h1>
   <form action="/register" method="POST">

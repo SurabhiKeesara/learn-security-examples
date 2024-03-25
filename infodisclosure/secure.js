@@ -28,6 +28,7 @@ app.get('/userinfo', async (req, res) => {
   }
 
   // Sanitize username input: Prevent NoSQL injection
+  // special characters, white space, tabs, should be replaced (gi - global case insensitive search)
   const sanitizedUsername = username.replace(/[^\w\s]/gi, ''); // Remove non-alphanumeric characters
 
   // Perform database query using sanitized username

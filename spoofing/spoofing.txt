@@ -1,1 +1,3 @@
 Briefly explain the vulnerability and why the secure version prevents the vulnerability.
+
+- Cookies were made exposed by not saying only hTML, and then output to the console

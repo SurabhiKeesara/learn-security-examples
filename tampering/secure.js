@@ -46,6 +46,7 @@ app.get("/", (req, res) => {
 })
 
 app.post("/register", (req, res) => {
+  // escape HTML makes the code a string, replace open tags with &lt;
   const sanitizedName = escapeHTML(req.body.name.trim());
   req.session.user = sanitizedName;
   res.send(`<p>Thank you</p> <a href="/">Back home</a>`)

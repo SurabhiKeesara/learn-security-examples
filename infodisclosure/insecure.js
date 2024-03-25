@@ -23,7 +23,8 @@ app.get('/userinfo', async (req, res) => {
   const { username } = req.query;
 
   // Vulnerable code: Directly using user-provided values in the query
-  const user = await User.findOne({ username: username }).exec();
+  // originally "findOne" , "find" allows all user input to be visible
+  const user = await User.find({ username: username }).exec();
 
   if (user) {
     res.send(`User: ${user}`);

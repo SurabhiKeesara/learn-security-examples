@@ -1,3 +1,15 @@
 Briefly explain the vulnerability and why the secure version prevents the vulnerability.
+
+The user input is not sanitized, allowing MongoDB queries themselves to be inserted into the 
+code. Passwords on users could be received with the query "username[$ne]=". The secure
+version prevents this by sanitizing input into strings and replacing non alphanumeric characters.
+
 Which CIA property does tampering violate?
+
+This affects confidentiality and availability, where confidential information could be revealed to users
+and made available ot unauthorized individuals simply through an unsanitized textbox insertion.
+
 What additional security mechanisms can you incorporate?
+
+Additional measures would include not returning the entire user information and hashing passwords so that
+they are not made visible in plain text, even if exposed.

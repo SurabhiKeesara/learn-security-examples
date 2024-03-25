@@ -1,0 +1,4 @@
+Vulnerabilities
+
+Input was not sanitized in the textbox, allowing users to input and add HTML code to the web page.
+The solution was to add sanitation that reformated all input as strings instead of allowing tags
