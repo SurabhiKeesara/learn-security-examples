@@ -1,0 +1,19 @@
+Security Properties of application
+- Confidentiality
+- I
+- Accessibility
+
+Threats
+- Anything (danger/design) to affect CIA properties
+- Examples
+    - Spoofing
+        - Attacker exploits flaw - appears as authorized user
+        - Ex
+            - not storing credentials well (not encrypting or hashing), not obscuring
+            - single factor authentication (ie - just a password)
+            - insecure session config (used to make it easy for client to stay logged in)
+    - Tampering
+    - Repudiation
+    - Information Disclosure
+    - Denial of Service
+    - Elevation of Privilege
