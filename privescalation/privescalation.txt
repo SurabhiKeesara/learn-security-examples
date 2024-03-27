@@ -1,0 +1,19 @@
+Issue:
+
+Any user ID can be updated, there is no verification of
+who is sending the request, no session/login handling, and no
+checks that whoever sends the request is a valid user.
+For example, user 2 (unprivileged) can send a role update to user
+1 and remove their admin status without authorization.
+
+Secure Fixes:
+
+The secure version uses sessions and login to prevent unlogged in users from 
+making changes. This means that only users who are admin or in their current
+account can make changes.
+
+Additional Measures:
+
+Additional measures include ways to ensure that session ids are secure (ie to prevent spoofing).
+We can also set the cookie property to {httpOnly: true} and {sameSite: true} to ensure that only
+clients on the same site can send the update role request.

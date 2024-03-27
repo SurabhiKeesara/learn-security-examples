@@ -1,2 +1,12 @@
 - Briefly explain the vulnerability and why the secure version is better at preventing repudiation than the insecure version.
+
+The vulnerability is that the insecure version does not sufficiently log errors or caught exceptions. This means
+that when something goes wrong, there are insufficient measures to catch attackers, prevent the issue, and detect
+security faults. It also means that security breaches can go undetected if users can make DB changes without any footprints.
+By logging errors and any calls to the endpoint, there is a footprint created to track all
+authorized and unauthorized request calls (ie - db changes), making it easier to catch abnormal activity.
+
 - What additional security mechanisms can you incorporate to prevent such attacks?
+Beyond logging, we should have scripts or some process of auditing and reading logs to detect abnormalities/suspicious patterns.
+We can also protect db access/other systems to ensure that they are immutable.
+
