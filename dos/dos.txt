@@ -1,2 +1,8 @@
 - Briefly explain the vulnerability and why the secure version prevents the vulnerability.
+
+The server crashes due to unsanitized input. Servers can also crash from a high volume of requests sent.
+The secure version uses a try catch to prevent the server from crashing after a singular bad request.
+
 - What additional security mechanisms can you incorporate to prevent such attacks?
+
+Rate limiting can be used to prevent the number of requests that can be sent within a certain window.
